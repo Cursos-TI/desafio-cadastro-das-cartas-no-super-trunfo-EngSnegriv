@@ -21,23 +21,24 @@
 // Carta 1
 
     char estado1 = 'A'; // Exemplo de estado
-    char numerdacarta1 = '1'; // Número da carta
+    char numerdacarta1 = '01'; // Número da carta
     char nomedacidade1[20] = "Salvador";
     int populacao1 = 12325000;
     float area1 = 1521.11;
     float pib1 = 1500000.00;
     int pontoturistico1 = 5;
+   
 
 // carta 2
 
-    char estado2;
+    char estado2[2];
     char numerdacarta2;
     char nomedacidade2[20];
     int populacao2;
     float area2;
     float pib2;
     int pontoturistico2;
-
+    
 
     printf("Bem-vindo ao jogo Super Trunfo!\n");
     printf("Vamos iniciar com as cartas!\n");
@@ -55,15 +56,23 @@
     printf("Numero da Carta: %c\n", numerdacarta1);
     printf("Nome da Cidade: %s\n", nomedacidade1);
     printf("População: %d\n", populacao1);
-    printf("Área: %.2f\n", area1);
-    printf("PIB: %.2f\n", pib1);
+    printf("Área: %.2f km2\n", area1);
+    printf("PIB: %.2f Bilhões De Reais\n", pib1);
     printf("Ponto Turístico: %d\n", pontoturistico1);
+
+    float densipopulacional1 = (float)populacao1 / area1; // Densidade populacional = população / área - habitantes por km²
+    float pibpercapita1 = (float)pib1 / populacao1; // PIB per capita = PIB / população - riqueza média por habitante
+
+    printf("Densidade Populacional: %f Hab/km2\n", densipopulacional1);
+    printf("PIB per Capita: %f reais\n", pibpercapita1);
+
 
     printf("Com base na carta 1 vamos criar a carta?:\n"); // Coletar informações para criar a carta 2
     printf("Pressione qualquer tecla para continuar...\n");
     scanf("%*c"); // Esperar usuário pressionar uma tecla
 
     printf("Carta 2:\n");
+
     printf("Digite o estado da carta 2: ");
     scanf(" %c", &estado2);
     printf("Seu estado é: %c\n", estado2);
@@ -82,9 +91,11 @@
     printf("Digite o PIB da carta 2: ");
     scanf("%f", &pib2);
     printf("Seu PIB é: %.2f\n", pib2);
-    printf("Digite o ponto turístico da carta 2: ");
+    printf("Digite a quantidade de pontos turísticos da carta 2: ");
     scanf("%d", &pontoturistico2);
-    printf("Seu ponto turístico é: %d\n", pontoturistico2);
+    printf("A quantidade de pontos turístico é: %d\n", pontoturistico2);
+    
+
     printf("Aqui estão as informações da carta número 2:\n"); // Exibir informações da carta 2
     printf("Carta 2:\n");
     printf("Estado: %c\n", estado2);
@@ -94,6 +105,14 @@
     printf("Área: %.2f\n", area2);
     printf("PIB: %.2f\n", pib2);
     printf("Ponto Turístico: %d\n", pontoturistico2);
+    
+    float densipopulacional2 = populacao2 / area2; // Densidade populacional = população / área - habitantes por km²
+    float pibpercapita2 = pib2 / populacao2; // PIB per capita = PIB / população - riqueza média por habitante
+
+
+    printf("Densidade Populacional: %.2f\n", densipopulacional2);
+    printf("PIB Per Capita: %f\n", pibpercapita2);
+
     printf("Pressione qualquer tecla para finalizar...\n");
     scanf("%*c"); // Esperar usuário pressionar uma tecla
 
