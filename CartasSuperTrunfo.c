@@ -18,14 +18,16 @@
 // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
 // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
+int main() {
+
 // Carta 1
 
-    char estado1 = 'A'; // Exemplo de estado
+    char estado1[] = "BA"; // Exemplo de estado
     int numerdacarta1 = 01; // Número da carta
-    char nomedacidade1[20] = "Salvador";
-    double populacao1 = 12325000;
-    float area1 = 1521.11;
-    float pib1 = 1500000.00;
+    char nomedacidade1[] = "Salvador";
+    double populacao1 = 2418000;
+    float area1 = 693.8;
+    float pib1 = 58.93;
     int pontoturistico1 = 5;
    
 
@@ -39,10 +41,10 @@
     printf("Continuando...\n");
     printf("Vamos dar as cartas!\n");
     
-    printf("Aqui estão as informacoes da carta número 1:\n"); // Exibir informações da carta 1
-    printf("Carta 1:\n");
-    printf("Estado: %c\n", estado1);
+    printf("Aqui estão as informacoes da carta número 1: \n\n"); // Exibir informações da carta 1
     printf("Numero da Carta: %d\n", numerdacarta1);
+    printf("Carta 1:\n");
+    printf("Estado: %s\n", estado1);
     printf("Nome da Cidade: %s\n", nomedacidade1);
     printf("População: %.2f Habitantes\n", populacao1);
     printf("Área: %.2f km2\n", area1);
@@ -63,17 +65,17 @@
 
 // carta 2
 
-    char estado2 = 'B'; // Exemplo de estado
+    char estado2[] = "BA"; // Exemplo de estado
     int numerdacarta2 = 02; // Número da carta
     char nomedacidade2[20] = "Feira de Santana";
-    int populacao2 = 15325000;
-    float area2 = 2021.11;
-    float pib2 = 2500000.00;
+    double populacao2 = 1532000;
+    float area2 = 202.11;
+    float pib2 = 65.09;
     int pontoturistico2 = 20;
 
     printf("Aqui estão as informacoes da carta número 2:\n\n"); // Exibir informações da carta 1
     printf("Carta 2:\n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2);
     printf("Numero da Carta: %d\n", numerdacarta2);
     printf("Nome da Cidade: %s\n", nomedacidade2);
     printf("População: %.d Habitantes\n", populacao2);
@@ -94,16 +96,38 @@
 
     float superpoder1 = (float)populacao1 + area1 + pib1 + pontoturistico1 + pibpercapita1 + 1 / densipopulacional1;
     float superpoder2 = (float)populacao2 + area2 + pib2 + pontoturistico2 + pibpercapita2 + 1 / densipopulacional2;
+
     printf("Super Porder Carta 1 é: %.2f\n", superpoder1);
     printf("Super Porder Carta 2 é: %.2f\n\n", superpoder2);
 
-    printf("População da Carta 1 é maior que a Carta 2? %d\n", populacao1 > populacao2);
+    /* printf("População da Carta 1 é maior que a Carta 2? %d\n", populacao1 > populacao2);
     printf("Área da Carta 1 é maior que a Carta 2? %d\n", area1 > area2);
     printf("PIB da Carta 1 é maior que a Carta 2? %d\n", pib1 > pib2);
     printf("Pontos Turísticos da Carta 1 é maior que a Carta 2? %d\n", pontoturistico1 > pontoturistico2);
     printf("PIB per Capita da Carta 1 é maior que a Carta 2? %d\n", pibpercapita1 > pibpercapita2);
     printf("Densidade Populacional da Carta 1 é maior que a Carta 2? %d\n", densipopulacional1 > densipopulacional2);
-    printf("O Super Poder da Carta 1 é maior que o da Carta 2? %d\n\n", superpoder1 > superpoder2);
+    printf("O Super Poder da Carta 1 é maior que o da Carta 2? %d\n\n", superpoder1 > superpoder2); */
+
+    printf("Vamos comparar os atributos das cartas!\n");
+
+    
+    printf("Comparando as cartas com base na população:\n \n");
+    printf("A população da carta 1 é %.2f \n", populacao1);
+    printf("A população da carta 2 é %.2f \n", populacao2); 
+
+    if( populacao1 > populacao2){
+        printf("A carta 1 %s tem uma população maior que a carta 2 %s\n\n", nomedacidade1, nomedacidade2);
+    } else {
+        printf("A carta 2 %s tem uma população maior que a carta 1 %s \n\n", nomedacidade2, nomedacidade1);
+    }  
+
+    printf("A carta vencedora é a carta com maior população é? \n\n");
+    if (populacao1 > populacao2){
+        printf("A carta 1, %s é a vencedora!\n\n", nomedacidade1);
+    } else {
+        printf("A carta 2, %s é a vencedora!\n\n", nomedacidade2);
+    }
+
 
     printf("Pressione qualquer tecla para finalizar...\n");
     scanf("%*c"); // Esperar usuário pressionar uma tecla
